@@ -1,0 +1,386 @@
+@import "nullstyle.scss";
+
+@import "vars.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sofia+Sans+Condensed:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+
+// Шаблон №1
+.tplborder {
+   font-size: 100px;
+   border-bottom: 5px dashed red;
+}
+
+@mixin fontz($f, $c) {
+   font-size: $f;
+   color: $c;
+}
+
+// .block{
+// 	width: 300px / 960px * 100%;
+// 	background-color: #666;
+// 	padding: 30px;
+// 	line-height: 60px;
+// 	.block__text{
+// 		font-size: $fz;
+// 		span{
+// 			color: green;
+// 		}
+// 	}
+// }
+// .link{
+// 	@include fontz(80px,green);
+// 	color: $color_1;
+// 	text-decoration: underline;
+// 	font-size: $fz;
+// 	.block &{
+// 		font-size: $fz;
+// 	}
+// 	&:hover{
+// 		color: $color_2;
+// 	}
+// 	@extend .tplborder;
+// }
+// .link-2{
+// 	@include fontz(50px,green);
+// 	border-bottom: 5px dashed #000;
+// 	@extend .tplborder;
+// }
+
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+
+.content {
+   max-width: 1920px;
+}
+
+.container {
+   max-width: 1170px;
+   margin: 0 auto;
+}
+
+.display__flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.display__flex-bitween {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.form {
+   display: none;
+
+   &__label {
+      display: block;
+
+      &:last-child {
+         margin-top: 120px;
+      }
+   }
+
+   &__input {
+      margin-bottom: 12px;
+      padding: 8px 0;
+      width: 100%;
+      border-bottom: 1px solid $accent;
+
+      &:focus {
+         border-bottom: 1px solid $red;
+
+      }
+   }
+
+   &__btn {
+      margin: 20px auto 0;
+      display: block;
+      padding: 10px 30px;
+      background-color: $accent;
+      color: $white;
+      border-radius: 8px;
+
+      &:hover {
+         background-color: $white;
+         color: $accent;
+         border: 1px solid $accent;
+      }
+
+   }
+
+   .errorMessage {
+      color: $red;
+      padding: 10px 0;
+   }
+}
+
+
+#hi {
+   color: $white;
+
+   .fullscreen {
+      min-height: 100vh;
+      background: url('../../img/background_screen.png') center / cover no-repeat;
+      display: flex;
+
+      &__section {}
+
+      &__body {}
+
+      &__text {
+         font-size: 24px;
+         font-weight: 500;
+         letter-spacing: 1.44px;
+         text-transform: uppercase;
+      }
+
+      &__title {
+         margin: 24px 0px 40px 0px;
+         font-size: 64px;
+         font-weight: 700;
+         line-height: 88px;
+      }
+
+      &__row {
+
+         .btn {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 38px 65px;
+            background: $accent;
+            border-radius: 5px;
+            color: $white;
+
+            &:hover {
+               background-color: $white;
+               color: $accent;
+
+            }
+         }
+
+         .icon {
+            cursor: pointer;
+            height: 48px;
+            width: 48px;
+            border: 1px $white solid;
+            border-radius: 50%;
+            margin-right: 25px;
+
+            &:last-child {
+               margin: 0;
+            }
+
+            &:hover {
+               border-color: $accent;
+               color: $accent;
+               transform: scale(1.2);
+            }
+         }
+      }
+   }
+
+   .page {
+
+      &__section-1 {}
+   }
+
+   >.container {}
+
+   .header {
+      margin: 55px 0px 155px 0px;
+
+      &__container {
+
+         a {
+            color: $white;
+
+            &:hover {
+               color: $accent;
+               text-decoration: underline;
+            }
+         }
+      }
+
+      &__phone {
+         >img {
+            margin-right: 11px;
+         }
+      }
+   }
+
+   .hedar {
+
+      &__logo {}
+   }
+
+   .menu {
+
+      &__icon {}
+
+      &__body {}
+
+      &__list {
+         width: 500px;
+      }
+
+      &__link {}
+   }
+}
+
+#news {
+
+   height: 808px;
+
+   .news {
+
+      &__row {
+         display: flex;
+         margin: 80px 0px 180px 0px;
+      }
+
+      &__column {
+         width: 45%;
+
+         .wrapper__imgs {
+            margin: 50px 0px 0px 130px;
+         }
+
+         .container {
+
+            &__imgs {
+               position: relative;
+               width: 471px;
+               height: 502px;
+               border: 2px solid $light-gray;
+            }
+         }
+
+         .img {
+            width: 323px;
+            height: 486px;
+         }
+
+         .img-1 {
+            position: absolute;
+            top: 100px;
+            left: -97px;
+         }
+
+         .img-2 {
+            position: absolute;
+            top: -51px;
+            right: -100px;
+         }
+
+      }
+
+      &__date {
+         margin-top: 20px;
+         border-bottom: 1px solid $light-gray;
+
+         &:first-child {
+            margin-top: 0;
+         }
+      }
+
+      &__title {
+         font-size: 24px;
+         font-weight: 600;
+         cursor: pointer;
+      }
+
+      &__description {
+         margin: 10px 0px 20px 0px;
+         display: flex;
+         align-items: center;
+         font-size: 18px;
+      }
+
+      &__dots {
+         display: flex;
+      }
+
+      &__dot {
+         display: inline;
+         margin-right: 12px;
+         width: 5px;
+         height: 5px;
+         border-radius: 50%;
+         background-color: $gray;
+
+         &:first-child {
+            margin-left: 12px;
+         }
+      }
+   }
+
+}
+
+#slider__swiper {
+
+   background-color: $accent;
+   color: $gray;
+
+   .swiper {
+      height: 782px;
+   }
+
+   .swiper-wrapper {}
+
+   .slider__item {
+      flex-direction: column;
+      max-width: 785px;
+      margin: 0 auto;
+   }
+
+   .swiper-slide {
+      .slider {
+
+         &__item {
+            margin: 220px auto;
+            line-height: 40px;
+            text-align: center;
+         }
+
+         &__img {}
+
+         &__title {
+            margin: 34px 0px 20px 0px;
+            font-size: 36px;
+            font-weight: 600;
+         }
+
+         &__description {
+            color: $white;
+            font-size: 16px;
+         }
+
+         &__text {
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 5.88px;
+         }
+      }
+
+   }
+
+   .swiper-pagination {}
+
+   .swiper-button-prev {
+      color: $white;
+   }
+
+   .swiper-button-next {
+      color: $white;
+   }
+
+   .swiper-scrollbar {}
+
+}

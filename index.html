@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>T ZEEZ_TJE</title>
+	<meta name="description" content="htmllessons.ru - Лучшие уроки по созданию сайтов">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="libs/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="libs/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/adaptive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#3A4574">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#3A4574">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3A4574">
+
+</head>
+
+<body>
+
+	<form action="#" method="post" class="form" id="hidden-content">
+		<label for="name" class="form__label">Name</label>
+		<input type="text" class="form__input" id="name" placeholder="Name" name="name">
+		<label for="surname" class="form__label">Surname</label>
+		<input type="text" class="form__input" id="surname" placeholder="Surname" name="surname">
+		<label for="email" class="form__label">E-mail</label>
+		<input type="email" class="form__input" id="email" placeholder="E-mail" name="email">
+		<input type="date" class="form__input" id="date" name="date">
+		<input type="checkbox" name="Agreement" id="checkbox">
+		<label for="checkbox">Политика конфиденциальность.</label>
+		<div class="errorMessage"></div>
+		<button type="submit" id="sendMail" class="form__btn">Reserve</button>
+	</form>
+
+	<div class="wrapper">
+		<div class="content">
+			<section id="hi">
+				<div class="fullscreen__section fullscreen page__section-1">
+					<div class="container">
+						<div class="fullscreen__body">
+							<header class="header">
+								<div class="header__container display__flex-bitween">
+									<a href="#" class="hedar__logo">
+										<img src="img/logo.svg" alt="Logo">
+									</a>
+									<div class="header__menu menu display__flex-bitween">
+										<div class="menu__icon">
+											<span></span>
+										</div>
+										<nav class="menu__body">
+											<ul class="menu__list display__flex-bitween">
+												<li>
+													<a data-goto=".page__section-1" href="#" class="menu__link">
+														À la carte</a>
+												</li>
+												<li>
+													<a data-goto=".page__section-2" href="#" class="menu__link">
+														Wijnkaart</a>
+												</li>
+												<li>
+													<a data-goto=".page__section-3" href="#" class="menu__link">
+														Lunchmenu</a>
+												</li>
+												<li>
+													<a data-goto=".page__section-4" href="#" class="menu__link">
+														Contact</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<div class="header__phone display__flex-center">
+										<img src="img/Phone.svg" alt="Phone">
+										<a href="tel:+32 9 282 57 25">+32 9 282 57 25</a>
+									</div>
+								</div>
+							</header>
+							<div class="fullscreen__text">OPEN EVERYDAY 6AM - 9PM</div>
+							<h1 class="fullscreen__title">A bad day with lunch is better than a good day without it.</h1>
+							<div class="fullscreen__row display__flex-bitween ">
+								<button class="btn" data-fancybox data-src="#hidden-content" href="javascript:;">Reserve a
+									table</button>
+								<div class="icons display__flex-bitween">
+									<div class="icon display__flex-center">Fb</div>
+									<div class="icon display__flex-center">Ig</div>
+									<div class="icon display__flex-center">Tw</div>
+									<div class="icon display__flex-center">Yt</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="news">
+				<div class="container">
+					<div class="news__row">
+						<div class="news__column">
+							<div class="news__date">
+								<h2 class="news__title">Woensdag 12/01</h2>
+								<div class="news__description">
+									<p>Salade met Serrano</p>
+									<div class="news__dots">
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+									</div>
+									<p>Steak Tartaar</p>
+								</div>
+							</div>
+							<div class="news__date">
+								<h2 class="news__title">Donderdag 13/01</h2>
+								<div class="news__description">
+									<p>Toast Roquefort</p>
+									<div class="news__dots">
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+									</div>
+									<p>Penne met Kip en Prei</p>
+								</div>
+							</div>
+							<div class="news__date">
+								<h2 class="news__title">Vrijdag 14/01 </h2>
+								<div class="news__description">
+									<p>Verrassing van de Chef</p>
+									<div class="news__dots">
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+									</div>
+									<p>Penne met Kip en Prei</p>
+								</div>
+							</div>
+							<div class="news__date">
+								<h2 class="news__title">Vrijdag 15/01 </h2>
+								<div class="news__description">
+									<p>Verrassing van de Chef</p>
+									<div class="news__dots">
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+									</div>
+									<p>Penne met Kip en Prei</p>
+								</div>
+							</div>
+							<div class="news__date">
+								<h2 class="news__title">Vrijdag 16/01 </h2>
+								<div class="news__description">
+									<p>Verrassing van de Chef</p>
+									<div class="news__dots">
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+										<div class="news__dot"></div>
+									</div>
+									<p>Penne met Kip en Prei</p>
+								</div>
+							</div>
+						</div>
+						<div class="news__column">
+							<div class="wrapper__imgs">
+								<div class="container__imgs">
+									<div class="img img-1">
+										<img src="img/news/img1.png" alt="img1">
+									</div>
+									<div class="img img-2">
+										<img src="img/news/img2.png" alt="img2">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</section>
+			<section id="slider__swiper">
+				<div class="container">
+					<div class="swiper">
+						<div class="swiper-wrapper ">
+							<div class="swiper-slide">
+								<div class="slider__item display__flex-center">
+									<img src="img/slider/slider.svg" alt="" class="slider__img">
+									<h3 class="slider__title">Goede service, lekker eten, toffe ambiance</h3>
+									<div class="slider__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+										diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+										voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+										gubergren.
+									</div>
+									<p class="slider__text">ALAIN HEYNDRICKX</p>
+								</div>
+							</div>
+							<div class="swiper-slide ">
+								<div class="slider__item display__flex-center">
+									<img src="img/slider/slider.svg" alt="" class="slider__img">
+									<h3 class="slider__title">Goede service, lekker eten, toffe ambiance</h3>
+									<div class="slider__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+										diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+										voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+										gubergren.
+									</div>
+									<p class="slider__text">ALAIN HEYNDRICKX</p>
+								</div>
+							</div>
+							<div class="swiper-slide ">
+								<div class="slider__item display__flex-center">
+									<img src="img/slider/slider.svg" alt="" class="slider__img">
+									<h3 class="slider__title">Goede service, lekker eten, toffe ambiance</h3>
+									<div class="slider__description">Далеко-далеко за словесными горами в стране гласных, и
+										согласных живут рыбные тексты. Великий предупреждал lorem текста подпоясал. От всех гор
+										коварных всеми по всей что, маленький парадигматическая безопасную собрал текста оксмокс
+										заманивший. Журчит, вопрос.
+									</div>
+									<p class="slider__text">ALAIN HEYNDRICKX</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+
+					</div>
+
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/jquery.fancybox.min.js"></script>
+	<script src="libs/wow.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+	<script src="js/common.js"></script>
+
+
+</body>
+
+</html>

@@ -215,7 +215,7 @@ body._lock {
   color: #3A4574;
   text-decoration: underline;
 }
-#hi__phone > img {
+#hi .header__phone > img {
   margin-right: 11px;
 }
 

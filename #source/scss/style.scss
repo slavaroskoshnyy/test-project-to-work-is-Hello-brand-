@@ -184,11 +184,11 @@ body._lock {
             }
          }
       }
-   }
 
-   &__phone {
-      >img {
-         margin-right: 11px;
+      &__phone {
+         >img {
+            margin-right: 11px;
+         }
       }
    }
 }
@@ -327,6 +327,7 @@ body._lock {
             letter-spacing: 5.88px;
          }
       }
+
    }
 
    .swiper-pagination {

@@ -6,15 +6,15 @@
 	<meta charset="utf-8">
 
 	<title>T ZEEZ_TJE</title>
-	<meta name="description" content="htmllessons.ru - Лучшие уроки по созданию сайтов">
+	<meta name="description" content="T ZEEZ_TJE">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" href="libs/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="libs/animate.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/adaptive.css">
+	<link rel="stylesheet" href="libs/animate.css">
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
 	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
@@ -52,13 +52,13 @@
 			<section id="hi">
 				<div class="fullscreen__section fullscreen page__section-1">
 					<div class="container">
-						<div class="fullscreen__body">
+						<div class="fullscreen__body wow zoomIn" data-wow-duration="1500ms">
 							<header class="header">
 								<div class="header__container display__flex-bitween">
 									<a href="#" class="hedar__logo">
 										<img src="img/logo.svg" alt="Logo">
 									</a>
-									<div class="header__menu menu display__flex-bitween">
+									<div class="header__menu menu">
 										<div class="menu__icon">
 											<span></span>
 										</div>
@@ -89,7 +89,8 @@
 									</div>
 								</div>
 							</header>
-							<div class="fullscreen__text">OPEN EVERYDAY 6AM - 9PM</div>
+							<div class="fullscreen__text" data-wow-duration="100s">OPEN
+								EVERYDAY 6AM - 9PM</div>
 							<h1 class="fullscreen__title">A bad day with lunch is better than a good day without it.</h1>
 							<div class="fullscreen__row display__flex-bitween ">
 								<button class="btn" data-fancybox data-src="#hidden-content" href="javascript:;">Reserve a
@@ -108,7 +109,7 @@
 			<section id="news">
 				<div class="container">
 					<div class="news__row">
-						<div class="news__column">
+						<div class="news__column wow fadeInLeft" data-wow-duration="2s">
 							<div class="news__date">
 								<h2 class="news__title">Woensdag 12/01</h2>
 								<div class="news__description">
@@ -170,7 +171,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="news__column">
+						<div class="news__column wow fadeInRight" data-wow-duration="2s">
 							<div class="wrapper__imgs">
 								<div class="container__imgs">
 									<div class="img img-1">
@@ -186,7 +187,7 @@
 			</section>
 			<section id="slider__swiper">
 				<div class="container">
-					<div class="swiper">
+					<div class="swiper wow zoomIn" data-wow-duration="1500ms">
 						<div class="swiper-wrapper ">
 							<div class="swiper-slide">
 								<div class="slider__item display__flex-center">
@@ -226,11 +227,12 @@
 							</div>
 						</div>
 
+						<div class="swiper-pagination"></div>
+
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 
 					</div>
-
 				</div>
 			</section>
 		</div>

@@ -4,49 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sofia+Sans+Condensed:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
-
-// Шаблон №1
-.tplborder {
-   font-size: 100px;
-   border-bottom: 5px dashed red;
-}
-
-@mixin fontz($f, $c) {
-   font-size: $f;
-   color: $c;
-}
-
-// .block{
-// 	width: 300px / 960px * 100%;
-// 	background-color: #666;
-// 	padding: 30px;
-// 	line-height: 60px;
-// 	.block__text{
-// 		font-size: $fz;
-// 		span{
-// 			color: green;
-// 		}
-// 	}
-// }
-// .link{
-// 	@include fontz(80px,green);
-// 	color: $color_1;
-// 	text-decoration: underline;
-// 	font-size: $fz;
-// 	.block &{
-// 		font-size: $fz;
-// 	}
-// 	&:hover{
-// 		color: $color_2;
-// 	}
-// 	@extend .tplborder;
-// }
-// .link-2{
-// 	@include fontz(50px,green);
-// 	border-bottom: 5px dashed #000;
-// 	@extend .tplborder;
-// }
-
 .wrapper {
    min-height: 100vh;
    display: flex;
@@ -94,7 +51,6 @@
 
       &:focus {
          border-bottom: 1px solid $red;
-
       }
    }
 
@@ -120,6 +76,25 @@
    }
 }
 
+//! меню
+
+body._touch {
+   .menu__list>li {
+      display: flex;
+      align-items: center;
+   }
+
+   .menu__link {
+      flex: 1 1 auto;
+   }
+}
+
+body._lock {
+   overflow: hidden;
+}
+
+
+
 
 #hi {
    color: $white;
@@ -128,10 +103,6 @@
       min-height: 100vh;
       background: url('../../img/background_screen.png') center / cover no-repeat;
       display: flex;
-
-      &__section {}
-
-      &__body {}
 
       &__text {
          font-size: 24px;
@@ -185,15 +156,21 @@
       }
    }
 
-   .page {
-
-      &__section-1 {}
-   }
-
-   >.container {}
-
    .header {
       margin: 55px 0px 155px 0px;
+
+      .menu {
+
+         &__icon {
+            display: none;
+         }
+
+         &__body {
+            &._active {
+               left: 0;
+            }
+         }
+      }
 
       &__container {
 
@@ -206,32 +183,21 @@
             }
          }
       }
-
-      &__phone {
-         >img {
-            margin-right: 11px;
-         }
-      }
    }
 
-   .hedar {
-
-      &__logo {}
-   }
-
-   .menu {
-
-      &__icon {}
-
-      &__body {}
-
-      &__list {
-         width: 500px;
+   &__phone {
+      >img {
+         margin-right: 11px;
       }
-
-      &__link {}
    }
 }
+
+.menu {
+   &__list {
+      width: 500px;
+   }
+}
+
 
 #news {
 
@@ -319,7 +285,6 @@
          }
       }
    }
-
 }
 
 #slider__swiper {
@@ -331,24 +296,17 @@
       height: 782px;
    }
 
-   .swiper-wrapper {}
-
-   .slider__item {
-      flex-direction: column;
-      max-width: 785px;
-      margin: 0 auto;
-   }
-
    .swiper-slide {
       .slider {
 
          &__item {
+            flex-direction: column;
+            max-width: 785px;
+            margin: 0 auto;
             margin: 220px auto;
             line-height: 40px;
             text-align: center;
          }
-
-         &__img {}
 
          &__title {
             margin: 34px 0px 20px 0px;
@@ -368,10 +326,18 @@
             letter-spacing: 5.88px;
          }
       }
-
    }
 
-   .swiper-pagination {}
+   .swiper-pagination {
+      >span {
+         background-color: $white;
+         margin-right: 12px;
+
+         &:last-child {
+            margin-right: 0;
+         }
+      }
+   }
 
    .swiper-button-prev {
       color: $white;
@@ -380,7 +346,4 @@
    .swiper-button-next {
       color: $white;
    }
-
-   .swiper-scrollbar {}
-
 }

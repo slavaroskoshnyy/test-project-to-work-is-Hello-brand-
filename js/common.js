@@ -1,149 +1,136 @@
-$(function() {
-
-	new WOW().init();
-
-	$(".hamburger").click(function(){
-		$(this).toggleClass("is-active");
-
-		if($(this).hasClass('is-active')){
-			$('.mnu_top').slideDown(300);
-		}else{
-			$('.mnu_top').slideUp(300);
-		}
-	});
-
+const wow = new WOW({
+    mobile: false,
 });
 
-// $("#hidden-content").submit(function(){
-// 	let str = $(this).serialize();
-// 	$.ajax({
-// 		type: "POST",
-// 		url: "php/index.php",
-// 		data: str,
-// 		success: function(html){
-// 			$('.content_p').html(html);
-// 		}
-// 	});
-// 	return false;
-// })
+wow.init();
 
-$('#sendMail').click (function () {
-	let email = $('#email').val().trim();
-	let name = $('#name').val().trim();
-	let surname = $('#surname').val().trim();
-	let checkbox = $('#checkbox').is(':checked');
-	let date = $('#date').val().trim();
+// Проверка на каком устройстве и в каком браузере открыто
 
+const isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function () {
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows()
+    );
+  },
+};
 
-	if (name == "") {
-		$(".errorMessage").text(' Введите имя!');
-		return false;
-	} else if (surname == "") {
-		$(".errorMessage").text(' Введите фамилию!');
-		return false;
-	}else if (email == "") {
-		$(".errorMessage").text(' Введите email!');
-		return false;
-	} else if (!checkbox) {
-		$(".errorMessage").text(' Вы не соглосились с политикой конфиденциальности!');
-		return false;
-	};
+if (isMobile.any()) {
+  document.body.classList.add("_touch");
 
-	$('.errorMessage').text('')
+  let menuArrows = document.querySelectorAll(".menu__arrow");
+  if (menuArrows.length > 0) {
+    for (let index = 0; index < menuArrows.length; index++) {
+      const menuArrow = menuArrows[index];
+      menuArrow.addEventListener("click", function (e) {
+        menuArrow.parentElement.classList.toggle("_active");
+      });
+    }
+  }
+} else {
+  document.body.classList.add("_pc");
+}
+// меню бургер
 
-	$.ajax({
-		url:'php/index.php',
-		type:'POST',
-		cache: false,
-		data:	{'name':name, 'email':email, 'surname':surname, 'date': date},
-		dataType: 'html',
-		beforeSend: function () {
-			$('#sendMail').prop ("disabled", true);
-		},
-		success: function(data) {
-			if (data) {
-				$('#hidden-content').trigger ("reset")
-				alert("Сообщение отправлено!");
-				$('#sendMail').prop ("disabled", false);
-			} else {
-				if (!data)				
-					alert ("Что-то пошло не так! Сообщение не отправлено.");
-			$('#sendMail').prop ("disabled", false);				
-		}
-	}
-	});
+const iconMenu = document.querySelector(".menu__icon");
+const menuBody = document.querySelector(".menu__body");
+const menuList = document.querySelector(".menu__list");
+if (iconMenu) {
+  iconMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle("_lock");
+    menuList.classList.toggle("display__flex-bitween");
+    iconMenu.classList.toggle("_active");
+    menuBody.classList.toggle("_active");
+  });
+}
+
+$("#sendMail").click(function () {
+  let email = $("#email").val().trim();
+  let name = $("#name").val().trim();
+  let surname = $("#surname").val().trim();
+  let checkbox = $("#checkbox").is(":checked");
+  let date = $("#date").val().trim();
+
+  if (name == "") {
+    $(".errorMessage").text(" Введите имя!");
+    return false;
+  } else if (surname == "") {
+    $(".errorMessage").text(" Введите фамилию!");
+    return false;
+  } else if (email == "") {
+    $(".errorMessage").text(" Введите email!");
+    return false;
+  } else if (!checkbox) {
+    $(".errorMessage").text(
+      " Вы не соглосились с политикой конфиденциальности!"
+    );
+    return false;
+  }
+
+  $(".errorMessage").text("");
+
+  $.ajax({
+    url: "php/index.php",
+    type: "POST",
+    cache: false,
+    data: { name: name, email: email, surname: surname, date: date },
+    dataType: "html",
+    beforeSend: function () {
+      $("#sendMail").prop("disabled", true);
+    },
+    success: function (data) {
+      if (data) {
+        $("#hidden-content").trigger("reset");
+        alert("Сообщение отправлено!");
+        $("#sendMail").prop("disabled", false);
+      } else {
+        if (!data) alert("Что-то пошло не так! Сообщение не отправлено.");
+        $("#sendMail").prop("disabled", false);
+      }
+    },
+  });
 });
 
-// const swiper = new Swiper('.swiper', {
-// 	speed: 400,
-// 	spaceBetween: 100,
-//  });
- 	
-// Позволяет установить разные параметры для разных контрольных точек (размеров экрана). В точках останова можно изменить не все параметры, а только те, которые не требуют другой схемы и логики, например slidesPerView, slidesPerGroup, spaceBetween, grid.rows. Такие параметры вроде loopи effectне подойдут
+const swiper = new Swiper(".swiper", {
+  loop: true,
 
-// const swiper = new Swiper('.swiper', {
-//   // Default parameters
-//   slidesPerView: 1,
-//   spaceBetween: 10,
-//   // Responsive breakpoints
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: 2,
-//       spaceBetween: 20
-//     },
-//     // when window width is >= 480px
-//     480: {
-//       slidesPerView: 3,
-//       spaceBetween: 30
-//     },
-//     // when window width is >= 640px
-//     640: {
-//       slidesPerView: 4,
-//       spaceBetween: 40
-//     }
-//   }
-// })
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 
-const swiper = new Swiper('.swiper', {
-	loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 
-	navigation: {
-	  nextEl: '.swiper-button-next',
-	  prevEl: '.swiper-button-prev',
-	},
+  slideToClickedSlide: true,
 
-	slideToClickedSlide: true,
- 
-	keyboard: {
-		enabled: true,
-		onlyInViewport:true,
-		pageUpDown: true,
-	},
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
 
-	mousewheel: {
-		sensitivity: 1,
-	},
+  watchOverflow: true,
 
-	watchOverflow: true,
-
-	speed: 800,
-
-	breakpoints: {
-		// when window width is >= 320px
-		// 320: {
-		//   slidesPerView: 2,
-		//   spaceBetween: 20
-		// },
-		// // when window width is >= 480px
-		// 480: {
-		//   slidesPerView: 3,
-		//   spaceBetween: 30
-		// },
-		// // when window width is >= 640px
-		// 640: {
-		//   slidesPerView: 4,
-		//   spaceBetween: 40
-		// },
-	},
- });
+  speed: 800,
+});

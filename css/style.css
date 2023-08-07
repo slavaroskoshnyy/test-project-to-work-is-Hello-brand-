@@ -171,6 +171,7 @@ body._lock {
   line-height: 88px;
 }
 #hi .fullscreen__row .btn {
+  padding-bottom: 265px;
   font-size: 18px;
   font-weight: 500;
   padding: 38px 65px;

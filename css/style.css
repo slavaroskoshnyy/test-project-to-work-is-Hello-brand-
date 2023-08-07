@@ -155,7 +155,7 @@ body._lock {
 }
 #hi .fullscreen {
   min-height: 100vh;
-  background: url("../../img/background_screen.png") center/cover no-repeat;
+  background: url("../img/background_screen.png") center/cover no-repeat;
   display: flex;
 }
 #hi .fullscreen__text {
